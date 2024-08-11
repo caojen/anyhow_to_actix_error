@@ -28,7 +28,8 @@ impl DerefMut for Error {
 
 impl Display for Error {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "error: {:?}", &self)
+        let err = &self.0;
+        write!(f, "{}", err)
     }
 }
 

@@ -6,4 +6,7 @@ edition = "2021"
 [dependencies]
 anyhow = { version = "1" }
 actix-web = { version = "4" }
-log = { version = "0.4" }
+
+[dev-dependencies]
+tokio = { version = "1.39.2", features = ["full"] }
+rand = { version = "0.8.5" }
