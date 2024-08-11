@@ -10,6 +10,7 @@ keywords = [
     "anyhow",
     "actix-web"
 ]
+readme = "README.md"
 
 [dependencies]
 anyhow = { version = "1" }
