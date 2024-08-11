@@ -2,6 +2,14 @@
 name = "anyhow-to-actix-error"
 version = "0.1.0"
 edition = "2021"
+description = "Helpers to convert anyhow::Error to actix_web::Error"
+license = "MIT"
+repository = "https://github.com/caojen/anyhow_to_actix_error"
+resolver = "1"
+keywords = [
+    "anyhow",
+    "actix-web"
+]
 
 [dependencies]
 anyhow = { version = "1" }
