@@ -38,14 +38,34 @@ async fn may_generate_error(val: &'static str) -> anyhow::Result<&'static str> {
         return Ok(val);
     }
 
-    bail!("custom error generated");
+    // bail!("custom error generated");
 
     // or use a custom struct (impl std::error::Error, which can be converted into anyhow::Error with From<T>)
-    Err(MyError("custom error generated".to_string()).into())
+    // return Err(MyError("custom error generated".to_string()).into());
+
+    // or from another function
+    MyError::new_err()?;
+
+    // or return serde_json error
+    // let bad_json = "abc";
+    // let _: i64 =  serde_json::from_str(bad_json)?; // this line should raise error
+    // unreachable!()
+
+    unreachable!()
 }
 
 #[derive(Debug)]
 struct MyError(String);
+
+impl MyError {
+    pub fn new() -> Self {
+        MyError(String::from("MyError from new()"))
+    }
+
+    pub fn new_err() -> Result<(), Self> {
+        Err(Self::new())
+    }
+}
 
 impl Display for MyError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {

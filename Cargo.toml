@@ -1,6 +1,6 @@
 [package]
 name = "anyhow-to-actix-error"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Helpers to convert anyhow::Error to actix_web::Error"
 license = "MIT"
@@ -19,3 +19,4 @@ actix-web = { version = "4" }
 [dev-dependencies]
 tokio = { version = "1.39.2", features = ["full"] }
 rand = { version = "0.8.5" }
+serde_json = { version = "1" }
